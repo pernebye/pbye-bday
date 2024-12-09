@@ -18,9 +18,9 @@ loginBtn.addEventListener('click', () => {
 
 comeBtn.addEventListener('click', () => {
     const savedName = localStorage.getItem('username') || 'Неизвестный';
-    // Здесь можно отправить данные на сервер или обработать иначе
-    console.log('Информация о госте:', { name: savedName, status: 'Приду' });
-    alert('Спасибо за подтверждение! Информация отправлена.');
+    console.log('Имя для отправки:', savedName); // Лог для проверки
+    sendTelegramNotification(savedName);
+    alert('Спасибо за подтверждение! Уведомление отправлено.');
 });
 
 function validateAndLogin() {
@@ -67,16 +67,20 @@ yearInput.addEventListener('input', () => {
 });
 
 function sendTelegramNotification(name) {
+    console.log('Отправка уведомления:', name); // Лог для отладки
     fetch('https://bday-bot-l747.onrender.com/notify', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name }),
-    }).catch((error) => console.error('Ошибка отправки уведомления:', error));
+    })
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error(`Ошибка HTTP: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then((data) => {
+        console.log('Ответ от сервера:', data); // Лог ответа сервера
+    })
+    .catch((error) => console.error('Ошибка отправки уведомления:', error));
 }
-
-comeBtn.addEventListener('click', () => {
-    const savedName = localStorage.getItem('username') || 'Неизвестный';
-    sendTelegramNotification(savedName);
-    alert('Спасибо за подтверждение! Уведомление отправлено.');
-});
-
