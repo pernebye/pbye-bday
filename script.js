@@ -65,3 +65,18 @@ yearInput.addEventListener('input', () => {
         validateAndLogin();
     }
 });
+
+function sendTelegramNotification(name) {
+    fetch('https://bday-bot-l747.onrender.com/notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name }),
+    }).catch((error) => console.error('Ошибка отправки уведомления:', error));
+}
+
+comeBtn.addEventListener('click', () => {
+    const savedName = localStorage.getItem('username') || 'Неизвестный';
+    sendTelegramNotification(savedName);
+    alert('Спасибо за подтверждение! Уведомление отправлено.');
+});
+
