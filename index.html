@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Приглашение</title>
+    <!-- Подключение шрифта Montserrat с поддержкой кириллицы -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap&subset=cyrillic" rel="stylesheet">
+    <!-- Подключение библиотеки Flaticon Uicons Brands -->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link rel="stylesheet" href="styles.css?v=7" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Форма авторизации -->
+        <div class="login-section" id="loginSection">
+            <h1 class="main-title">ДМГ</h1>
+            <input type="text" id="nameInput" placeholder="Ваше имя" autocomplete="off" />
+            <div class="date-fields">
+                <input type="number" id="dayInput" min="1" max="31" />
+                <input type="number" id="monthInput" min="1" max="12" />
+                <input type="number" id="yearInput" min="1900" max="2100" />
+            </div>
+            <button id="loginBtn">Войти</button>
+        </div>
+
+        <!-- Раздел с приглашением -->
+        <div class="invitation-section" id="invitationSection">
+            <h1>Мое приглашение</h1>
+            <!-- Отображение изображения приглашения -->
+            <div class="pdf-container">
+                <img src="invitation.jpg" alt="Приглашение на мероприятие ДМГ" />
+            </div>
+
+            <!-- Ссылка на PDF -->
+            <a class="download-link" href="invitation.pdf" download>Скачать PDF</a>
+
+            <!-- Кнопки снизу -->
+            <div class="buttons-row">
+                <a class="icon-btn" href="https://chat.whatsapp.com/BVgdjm8daVw1gNnGXdKj2l" target="_blank">
+                    <!-- Иконка WhatsApp из Flaticon Uicons Brands -->
+                    <i class="fi fi-brands-whatsapp"></i>
+                    <span>Войти в чат</span>
+                </a>
+
+                <a class="icon-btn" href="https://t.me/+lNKJcGxwAgY2ZTNi" target="_blank">
+                    <!-- Иконка Telegram из Flaticon Uicons Brands -->
+                    <i class="fi fi-brands-telegram"></i>
+                    <span>Вишлист</span>
+                </a>
+
+                <button class="icon-btn" id="comeBtn">
+                    <span>Приду!</span>
+                </button>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>

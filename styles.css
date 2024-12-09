@@ -1,0 +1,222 @@
+/* Основные стили */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #000000;
+    color: #FFFFFF;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.main-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+h2.date-label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.login-section,
+.invitation-section {
+    display: none;
+}
+
+#loginSection {
+    display: block;
+    margin-top: 20px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    background: #1E1E1E;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15), 0 0 16px rgba(255, 255, 255, 0.075);
+    transition: box-shadow 0.3s ease;
+}
+
+input::placeholder {
+    color: #CCCCCC;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2), 0 0 24px rgba(255, 255, 255, 0.1);
+}
+
+.date-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.date-fields input[type="number"] {
+    width: 30%;
+    text-align: center;
+    background: #1E1E1E;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    border: none;
+    border-radius: 50px;
+    padding: 15px;
+    font-size: 1rem;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15), 0 0 16px rgba(255, 255, 255, 0.075);
+    transition: box-shadow 0.3s ease;
+}
+
+.date-fields input[type="number"]:focus {
+    outline: none;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2), 0 0 24px rgba(255, 255, 255, 0.1);
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button, .download-link, .icon-btn {
+    cursor: pointer;
+    background: #800000;
+    color: #FFFFFF;
+    text-decoration: none;
+    border: none;
+    padding: 16px 28px;
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.1), 0 0 12px rgba(255, 255, 255, 0.05);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover, .download-link:hover, .icon-btn:hover {
+    background: #660000;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15), 0 0 16px rgba(255, 255, 255, 0.075);
+}
+
+button:focus, .download-link:focus, .icon-btn:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15), 0 0 20px rgba(255, 255, 255, 0.075);
+}
+
+.download-link {
+    background: #800000;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15), 0 0 16px rgba(255, 255, 255, 0.075);
+}
+
+.download-link:hover {
+    background: #660000;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15), 0 0 16px rgba(255, 255, 255, 0.075);
+}
+
+.icon-btn i {
+    font-size: 24px; /* Размер иконки */
+    color: #FFFFFF;   /* Цвет иконки */
+}
+
+.icon-btn .fi-brands-whatsapp,
+.icon-btn .fi-brands-telegram {
+    color: #FFFFFF; /* Белый цвет для обеих иконок */
+}
+
+.buttons-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.invitation-section {
+    display: none;
+    margin-top: 40px;
+}
+
+.pdf-container {
+    width: 100%;
+    aspect-ratio: 210 / 297; /* Соотношение сторон A4 */
+    margin-bottom: 20px;
+    background: #1E1E1E; /* Фон для случая, если изображение не загрузится */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Скругление углов изображения */
+}
+
+.icon-btn span {
+    font-family: 'Montserrat', sans-serif;
+}
+
+button:disabled {
+    background: #555555;
+    cursor: not-allowed;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1), 0 0 16px rgba(255, 255, 255, 0.05);
+}
+
+/* Стили для кнопки "Приду" */
+#comeBtn {
+    background: #50C878; /* Изумрудный цвет */
+    color: #FFFFFF; /* Белый цвет текста */
+    font-weight: 600; /* Немного жирнее текст */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#comeBtn:hover {
+    background: #3CB371; /* Тёмнее изумрудный при наведении */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15), 0 0 16px rgba(255, 255, 255, 0.075);
+}
+
+#comeBtn:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15), 0 0 20px rgba(255, 255, 255, 0.075);
+}
+
+/* Дополнительные стили для адаптивности */
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.5rem;
+    }
+
+    h2.date-label {
+        font-size: 1rem;
+    }
+
+    .icon-btn i {
+        font-size: 20px; /* Меньший размер иконки на маленьких экранах */
+    }
+
+    #comeBtn {
+        padding: 14px 24px; /* Немного меньше padding на маленьких экранах */
+    }
+}
